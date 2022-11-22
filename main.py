@@ -17,8 +17,8 @@ def to_sn(hex_str):
     if add <= 9:
         add = '0' + str(add)
     else:
-        add = str(add)
-    return hex_str + str(add)
+        add = '0' + to_hex(add)[-1]
+    return (hex_str + str(add)).upper()
 
 # for i in range(1, 11):
 #     print(i, to_hex(i), to_sn((to_hex(i))))
@@ -33,3 +33,4 @@ if __name__ == "__main__":
             f.write(to_sn((to_hex(i))))
             f.write('\n')
 
+ 
